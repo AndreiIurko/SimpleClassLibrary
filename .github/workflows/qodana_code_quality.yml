@@ -1,0 +1,31 @@
+#-------------------------------------------------------------------------------#
+#        Discover additional configuration options in our documentation         #
+#               https://www.jetbrains.com/help/qodana/github.html               #
+#-------------------------------------------------------------------------------#
+
+name: Qodana
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  qodana:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@27de2a744479d1d731934eeaf79287575ebc5dd3 # v2025.2.1
+        with:
+          pr-mode: ${{ github.event.pull_request != null }}
+          args: --configuration=Release,--no-statistics=true,--linter=qodana-cdnet,--no-build,--within-docker,true
+          upload-result: false
