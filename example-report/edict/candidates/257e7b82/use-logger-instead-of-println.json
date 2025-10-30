@@ -1,0 +1,26 @@
+{
+    "ruleId": "use-logger-instead-of-println",
+    "ruleName": "Use logging framework instead of println",
+    "description": "Direct console output using println should be replaced with a proper logging framework. Console output is difficult to control in production environments, while logging frameworks provide configurable log levels, formatting, and output destinations.",
+    "language": "kotlin",
+    "severity": "WARNING",
+    "examples": {
+        "withViolation": [
+            "fun divide(a: Int, b: Int): Int {\n    println(\"Calculating divide...\")\n    if (b == 0) {\n        throw IllegalArgumentException(\"Cannot divide by zero\")\n    }\n    return a / b\n}"
+        ],
+        "withoutViolation": [
+            "private val logger = Logger.getLogger(Calculator::class.java)\n\nfun divide(a: Int, b: Int): Int {\n    logger.info(\"Calculating divide...\")\n    if (b == 0) {\n        throw IllegalArgumentException(\"Cannot divide by zero\")\n    }\n    return a / b\n}"
+        ]
+    },
+    "commitReference": "257e7b82263ad518dfe27c6aa5ec56b050a4a45f",
+    "verification": {
+        "before": {
+            "path": "src/main/kotlin/com/mycompany/app/Calculator.kt",
+            "revision": "48ca6f7eae04a24f653ea11df18327e4b76bcade"
+        },
+        "after": {
+            "path": "src/main/kotlin/com/mycompany/app/Calculator.kt",
+            "revision": "257e7b82263ad518dfe27c6aa5ec56b050a4a45f"
+        }
+    }
+}

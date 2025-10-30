@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/schemastore/schemastore/master/src/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDJVM",
+          "fullName": "Qodana for JVM",
+          "version": "261.SNAPSHOT",
+          "rules": [
+            {
+              "id": "NoPrintlnInspection",
+              "shortDescription": {
+                "text": "No println usage"
+              },
+              "fullDescription": {
+                "text": "Direct console output using println should be replaced with a proper logging framework. Console output is difficult to control in production environments, while logging frameworks provide configurable log levels, formatting, and output destinations.",
+                "markdown": "Direct console output using println should be replaced with a proper logging framework. Console output is difficult to control in production environments, while logging frameworks provide configurable log levels, formatting, and output destinations."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning",
+                "parameters": {
+                  "suppressToolId": "NoPrintlnInspection",
+                  "ideaSeverity": "WARNING",
+                  "qodanaSeverity": "High",
+                  "codeQualityCategory": "Unspecified"
+                }
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "FlexInspect",
+                    "index": 194,
+                    "toolComponent": {
+                      "name": "QDJVM"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            }
+          ],
+          "taxa": [],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": []
+      },
+      "invocations": [
+        {
+          "startTimeUtc": "2025-10-30T15:12:14.751074Z",
+          "exitCode": 0,
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "versionControlProvenance": [
+        {
+          "repositoryUri": "ssh://git@git.jetbrains.team/sa/distillery-test.git",
+          "revisionId": "f7a387b5e751d45dc61c69bc6182176961a475e4",
+          "branch": "main",
+          "properties": {
+            "repoUrl": "",
+            "lastAuthorName": "alexey.afanasiev",
+            "vcsType": "Git",
+            "lastAuthorEmail": "alexey.afanasiev@jetbrains.com"
+          }
+        }
+      ],
+      "originalUriBaseIds": {
+        "SRCROOT": {
+          "description": {
+            "text": "The subdirectory within the project that was analyzed (--project-dir qodana CLI parameter)"
+          }
+        }
+      },
+      "results": [],
+      "automationDetails": {
+        "id": "distillery-test/qodana/2025-10-30",
+        "guid": "2ca2cf48-6a16-4839-957a-0816774f2a86",
+        "properties": {
+          "jobUrl": "",
+          "analysisKind": "other"
+        }
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "qodana.coverage.files.provided": false,
+        "configProfile": "absent",
+        "deviceId": "200623213e0c6bf-5c28-498a-b98f-0b8fe2f7a76a",
+        "qodanaNewResultSummary": {
+          "high": 24,
+          "total": 24
+        }
+      }
+    }
+  ]
+}

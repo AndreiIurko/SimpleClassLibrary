@@ -1,0 +1,12 @@
+{
+  "cloud" : {
+    "url" : "https://qodana.cloud/projects/VOlla/reports/YORV8w",
+    "reportId" : "YORV8w",
+    "projectId" : "VOlla",
+    "projectName" : "test",
+    "host" : "https://qodana.cloud"
+  },
+  "vcs" : {
+    "origin" : "ssh://git@git.jetbrains.team/sa/distillery-test.git"
+  }
+}

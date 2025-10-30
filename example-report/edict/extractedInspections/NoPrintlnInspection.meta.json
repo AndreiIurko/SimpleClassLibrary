@@ -1,0 +1,9 @@
+{
+    "description": "Direct console output using println should be replaced with a proper logging framework. Console output is difficult to control in production environments, while logging frameworks provide configurable log levels, formatting, and output destinations.",
+    "numberOfCurrentProblems": 24,
+    "numberOfFixedProblems": 26,
+    "commitInfo": {
+        "commit": "da9b5e4c7fd10052083b2aeaa02c5066a07012ec",
+        "description": "commit da9b5e4\nAuthor: alexey.afanasiev <alexey.afanasiev@jetbrains.com>\nDate:   Tue Oct 28 16:58:14 2025 +0100\n\n    More println for testing results limiting"
+    }
+}
