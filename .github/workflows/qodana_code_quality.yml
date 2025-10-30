@@ -24,8 +24,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@iurko/pull-problem # v2025.2.1
+        uses: JetBrains/qodana-action@edict-experiment
         with:
-          pr-mode: ${{ github.event.pull_request != null }}
-          args: --configuration=Release,--no-statistics=true,--linter=qodana-cdnet,--no-build,--within-docker,true
-          upload-result: false
+          edict-test-dir: ${{ github.workspace }}/example-report
